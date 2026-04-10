@@ -7,6 +7,5 @@ def main():
     choice = input("Enter your choice: ")
     print(f'You chose {choice}')
 
-
 if __name__ == "__main__":
     main()
