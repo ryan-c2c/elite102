@@ -11,12 +11,10 @@ def initialize_database():
     # Create a sample table
     print("Creating table if it does not exist...")
     cursor.execute('''
-        CREATE TABLE IF NOT EXISTS students
+        CREATE TABLE IF NOT EXISTS clients
             (id integer primary key, 
             name text, 
-            age integer, 
-            grade text, 
-            gpa real)
+            balance real)
     ''')
 
     print("Table created.")
