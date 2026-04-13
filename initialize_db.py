@@ -19,19 +19,5 @@ def initialize_database():
 
     print("Table created.")
 
-    # Insert sample data
-    print("Inserting sample data...")
-    cursor.execute('''
-        INSERT INTO students (name, age,grade, gpa) VALUES
-        ('Alice', 16, '10th', 3.5),
-        ('Bob', 17, '11th', 3.8),
-        ('Charlie', 15, '9th', 3.2)
-    ''')
-    print("Sample data inserted.")
-    # Commit the changes and close the connection
-    print("Committing changes and closing the connection...")
-    connection.commit()
-    connection.close()
-
 
 initialize_database()
