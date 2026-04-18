@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+
+<head>
+    <title>Totally legit banking app</title>
+    <link rel="stylesheet" text="text/css" href="style.css" />
+</head>
+
+<body>
+    <div class="wrapper">
+        <h1>Banking app</h1>
+        <a href="https://youtu.be/3BFTio5296w?list=RD3BFTio5296w">The fun link</a>
+        <h2>Create account</h2>
+
+
+        <form action="/register" method="post">
+            <label for="username">Username:</label>
+            <input type="text" id="username" name="username" required><br><br>
+            <label for="password">Password:</label>
+            <input type="password" id="password" name="password" required><br><br>
+            <input type="submit" value="register">
+        </form>
+
+        <h2>Deposit</h2>
+        <form action="/deposit" method="post">
+            <label for="username">Username:</label>
+            <input type="text" id="username" name="username" required><br><br>
+            <label for="money">Amount:</label>
+            <input type="money" id="money" name="money" required><br><br>
+            <input type="submit" value="deposit">
+        </form>
+
+        <h2>Withdraw</h2>
+        <form action="/withdraw" method="post">
+            <label for="username">Username:</label>
+            <input type="text" id="username" name="username" required><br><br>
+            <label for="money">Amount:</label>
+            <input type="money" id="money" name="money" required><br><br>
+            <input type="submit" value="withdraw">
+        </form>
+
+    </div>
+</body>
+
+</html>
