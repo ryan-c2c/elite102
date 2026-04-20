@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+
+<head>
+    <title>Totally legit banking app</title>
+    <link rel="stylesheet" text="text/css" href="{{ url_for('static', filename='styles/style.css')}}" />
+</head>
+
+<body>
+    <div class="wrapper">
+        <h1>Banking app</h1>
+
+        <a href="https://youtu.be/dQw4w9WgXcQ">The fun link</a>
+
+        <h2>Create account</h2>
+
+        <form method="post">
+            <label for="username">Username:</label>
+            <input type="text" id="username" name="username" required><br><br>
+            <label for="initial_amnt">Initial deposit:</label>
+            <input type="initial_amnt" id="initial_amnt" name="initial_amnt" required><br><br>
+            <input type="submit" , value="register">
+        </form>
+
+        <h2>Deposit</h2>
+        <form action="/deposit" method="post">
+            <label for="username">Username:</label>
+            <input type="text" id="username" name="username" required><br><br>
+            <label for="amount">Amount:</label>
+            <input type="amount" id="amount" name="amount" required><br><br>
+            <input type="submit" , value="deposit">
+        </form>
+
+        <h2>Withdraw</h2>
+        <form action="/withdraw" method="post">
+            <label for="username">Username:</label>
+            <input type="text" id="username" name="username" required><br><br>
+            <label for="amount">Amount:</label>
+            <input type="amount" id="amount" name="amount" required><br><br>
+            <input type="submit" , value="withdraw">
+        </form>
+
+        <form action="/delete" method="post">
+            <button type="submit">Delete all accounts</button>
+        </form>
+    </div>
+</body>

@@ -1,5 +1,6 @@
 import sqlite3
 
+
 def create_account(user, initial_deposit):
     connection = sqlite3.connect('example.db')
     cursor = connection.cursor()
@@ -11,6 +12,7 @@ def create_account(user, initial_deposit):
     print('Account has been made, closing connection.')
     connection.commit()
     connection.close()
+
 
 def withdraw(user, amount):
     connection = sqlite3.connect('example.db')
@@ -24,6 +26,7 @@ def withdraw(user, amount):
     connection.commit()
     connection.close()
     print("Balance has been updated")
+
 
 def deposit(user, amount):
     connection = sqlite3.connect('example.db')
@@ -39,6 +42,18 @@ def deposit(user, amount):
     print("Balance has been updated")
 
 
+def delete():
+    connection = sqlite3.connect('example.db')
+    cursor = connection.cursor()
+
+    cursor.execute('''
+            DELETE FROM clients;
+''')
+    connection.commit()
+    connection.close()
+    print("All rows deleted")
+
+
 def main():
     connection = sqlite3.connect('example.db')
     cursor = connection.cursor()
@@ -52,19 +67,22 @@ def main():
 
     if int(choice) == 1:
         user = input("What would you like to name the account?\n")
-        int_dp = input("How much would you like to deposit into this acccount?\n")
+        int_dp = input(
+            "How much would you like to deposit into this acccount?\n")
         create_account(user, int_dp)
-    
+
     elif int(choice) == 2:
-        user = input('What is the name of the account you would like to withdraw from?\n')
+        user = input(
+            'What is the name of the account you would like to withdraw from?\n')
         amount = input('How much would you like to withdraw\n')
         withdraw(user, amount)
 
     elif int(choice) == 3:
-        user = input('What is the name of the account you would like to deposit into?\n')
+        user = input(
+            'What is the name of the account you would like to deposit into?\n')
         amount = input('How much would you like to deposit\n')
         deposit(user, amount)
-    
+
     elif int(choice) == 4:
         cursor.execute('''
             DELETE FROM clients;
@@ -72,7 +90,6 @@ def main():
         connection.commit()
         connection.close()
         print("All rows deleted")
-        
 
 
 if __name__ == "__main__":
