@@ -2,21 +2,6 @@ from flask import Flask, render_template, request, redirect, url_for
 import logic
 
 
-<<<<<<< HEAD
-app = Flask(__name__)
-
-@app.route("/", methods=["GET", "POST"])
-def home():
-    if request.method == "POST":
-        password = request.form["password"]
-        username = request.form["username"]
-        print(username, password)
-    return render_template("index.html")
-    
-    
-if __name__ == "__main__":
-    app.run(debug=True)
-=======
 def main():
     app = Flask(__name__)
 
@@ -57,4 +42,3 @@ def main():
 
 if __name__ == "__main__":
     main()
->>>>>>> 4b2ce59 (Finished and changed my logic and html, all now connect fluidly all together)
