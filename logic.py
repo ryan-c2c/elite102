@@ -1,6 +1,18 @@
 import sqlite3
 
 
+def get_accounts():
+    connection = sqlite3.connect('example.db')
+    cursor = connection.cursor()
+
+    cursor.execute('''
+            SELECT * FROM clients 
+''')
+    all_data = cursor.fetchall()
+
+    return all_data
+
+
 def create_account(user, initial_deposit):
     connection = sqlite3.connect('example.db')
     cursor = connection.cursor()

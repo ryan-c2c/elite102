@@ -41,6 +41,13 @@
 
         <form action="/delete" method="post">
             <button type="submit">Delete all accounts</button>
+
         </form>
+
+
+        {% for account in accounts %}
+        {{account[1]}}
+        {% endfor %}
+
     </div>
 </body>

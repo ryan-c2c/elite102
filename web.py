@@ -11,7 +11,8 @@ def main():
             username = request.form["username"]
             initial_amount = request.form["initial_amnt"]
             logic.create_account(username, initial_amount)
-        return render_template("index.html")
+        accounts = logic.get_accounts()
+        return render_template("index.html", accounts=accounts)
 
     @app.route('/deposit', methods=["POST"])
     def deposit():
