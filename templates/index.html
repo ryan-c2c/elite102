@@ -39,15 +39,18 @@
             <input type="submit" , value="withdraw">
         </form>
 
+
+        <h2>Current accounts</h2>
+
+        {% for account in accounts %}
+        <li>{{account[1]}}</li>
+        {% endfor %}
+
+        <h2>Delete all</h2>
         <form action="/delete" method="post">
             <button type="submit">Delete all accounts</button>
 
         </form>
-
-
-        {% for account in accounts %}
-        {{account[1]}}
-        {% endfor %}
 
     </div>
 </body>
